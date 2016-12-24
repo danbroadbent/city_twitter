@@ -8,6 +8,6 @@ describe "user searches city", :type => :request do
     parsed_tweets = JSON.parse(response.body)
 
     expect(response.status).to eq(200)
-    expect(parsed_tweets.count).to eq(10)
+    expect(parsed_tweets.count).to eq(15)
   end
 end
