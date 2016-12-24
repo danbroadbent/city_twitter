@@ -28,6 +28,7 @@ gem 'rails_12factor', group: :production
 gem 'faraday'
 gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'figaro'
+gem 'twitter'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
