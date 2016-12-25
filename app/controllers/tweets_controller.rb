@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.find_by_city(params['query'])
-    byebug
+    geocode = GoogleService.convert_to_coords(params['query'])
+    @tweets = TwitterService.tweet_search(params['query'], geocode)
     render json: @tweets
   end
 end
