@@ -42,7 +42,7 @@ function initMapWithTweets(tweets){
     zoom: 15,
     center: uluru
   });
-  tweets.forEach(function(tweet, index){
+  tweets.forEach(function(tweet){
     if (tweet.geo != null) {
       var coordinates = {lat: tweet.geo.coordinates[0], lng: tweet.geo.coordinates[1]};
       var infowindow = new google.maps.InfoWindow({

@@ -4,6 +4,6 @@ class TwitterService
       config.consumer_key    = ENV["twitter_consumer_key"]
       config.consumer_secret = ENV["twitter_consumer_secret"]
     end
-    client.search("#{query}", geocode: "#{geocode},50km").take(15)
+    client.search("#{query}", geocode: "#{geocode},50km").take(20)
   end
 end
