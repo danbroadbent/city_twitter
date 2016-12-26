@@ -1,6 +1,4 @@
-$(document).ready( function(){
-  initMap()
-})
+var $citySearchForm
 
 function initMap() {
   var uluru = {lat: -25.363, lng: 131.044};
@@ -12,3 +10,26 @@ function initMap() {
     position: uluru,
     map: map
   });
+};
+
+$(document).ready( function(){
+  $citySearchForm = $("#city-search-form")
+
+  $('#submit-search').on("click", newSearch);
+})
+
+function newSearch(){
+  data = { query: $citySearchForm.val() }
+  $.ajax({
+    method: 'get',
+    url: "/tweets",
+    data: data
+  })
+  .then(function(tweets){
+    tweets.forEach (renderTweet)
+  })
+};
+
+function renderTweet(tweet){
+  console.log(tweet)
+};
